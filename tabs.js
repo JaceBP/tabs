@@ -50,9 +50,18 @@
     tabs[index].addEventListener('click', clickEventListener);
     tabs[index].addEventListener('keydown', keydownEventListener);
     tabs[index].addEventListener('keyup', keyupEventListener);
+    tabs[index].addEventListener('focus', focusEventListener);
 
     // Build an array with all tabs (<button>s) in it
     tabs[index].index = index;
+  }
+
+  function focusEventListener(event) {
+    var tab = event.target;
+    for (var t = 0; t < tabs.length; t++) {
+      tabs[t].parentElement.classList.remove('focus');
+    }
+    tab.parentElement.classList.add('focus');
   }
 
   // When a tab is clicked, activateTab is fired to activate it

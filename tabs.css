@@ -11,6 +11,7 @@ body {
 
 .tabs {
   width: 60rem;
+  margin: 32px auto;
 }
 
 [role="tablist"] {
