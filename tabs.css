@@ -1,3 +1,7 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 html {
   font-family: sans-serif;
   font-size: 62.5%;
@@ -6,45 +10,11 @@ html {
 body {
   font-size: 1.6rem;
   line-height: calc(1.6rem * 1.5);
-  font-family: 'Roboto', sans-serif;
 }
 
 .tabs {
   width: 60rem;
   margin: 32px auto;
-}
-
-[role="tablist"] {
-  margin: 0 0 -0.1em;
-  overflow: visible;
-}
-
-[role="tab"]:hover::before,
-[role="tab"]:focus::before,
-[role="tab"][aria-selected="true"]::before {
-  position: absolute;
-  bottom: 100%;
-  right: -1px;
-  left: -1px;
-  border-radius: 0.2em 0.2em 0 0;
-  border-top: 3px solid hsl(20deg 96% 48%);
-  content: "";
-}
-
-[role="tab"][aria-selected="true"]:not(:focus):not(:hover)::before {
-  border-top: 5px solid hsl(218deg 96% 48%);
-}
-
-[role="tab"][aria-selected="true"]::after {
-  position: absolute;
-  z-index: 3;
-  bottom: -1px;
-  right: 0;
-  left: 0;
-  height: 0.3em;
-  background: hsl(220deg 43% 99%);
-  box-shadow: none;
-  content: "";
 }
 
 [role="tab"]:hover,
@@ -55,100 +25,96 @@ body {
   color: inherit;
 }
 
-[role="tab"]:hover::before,
-[role="tab"]:focus::before {
-  border-color: hsl(20deg 96% 48%);
-}
-
-[role="tabpanel"] {
-  position: relative;
-  z-index: 2;
-  padding: 0.5em 0.5em 0.7em;
-  border: 1px solid hsl(219deg 1% 72%);
-  border-radius: 0 0.2em 0.2em;
-  box-shadow: 0 0 0.2em hsl(219deg 1% 72%);
-  background: hsl(220deg 43% 99%);
-}
-
 [role="tabpanel"].is-hidden {
   display: none;
 }
-
-[role="tabpanel"]:focus {
-  border-color: hsl(20deg 96% 48%);
-  box-shadow: 0 0 0.2em hsl(20deg 96% 48%);
-  outline: 0;
-}
-
-[role="tabpanel"]:focus::after {
-  position: absolute;
-  bottom: 0;
-  right: -1px;
-  left: -1px;
-  border-bottom: 3px solid hsl(20deg 96% 48%);
-  border-radius: 0 0 0.2em 0.2em;
-  content: "";
-}
-
-[role="tabpanel"] p {
-  margin: 0;
-}
-
-[role="tabpanel"] * + p {
-  margin-top: 1em;
-}
-
 
 button {
   cursor: pointer;
 }
 
-
 .tab-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin: 0;
-  padding: 8px 16px;
-  border: 1px solid hsl(219deg 1% 72%);
-  border-radius: 0.2em 0.2em 0 0;
-  box-shadow: 0 0 0.2em hsl(219deg 1% 72%);
+  border-radius: 4px;
   overflow: visible;
-  font-family: inherit;
-  font-size: inherit;
-  background: hsl(220deg 20% 94%);
 }
 
-button {
+.tab-container:hover {
+  box-shadow: 0 0 0 4px #B8C9D8;
+}
+
+.tab-container.focus {
+  box-shadow: 0 0 0 4px #FFC300;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.button {
   border: none;
-  padding: 8px;
-  font-size: 1.4rem;
-  font-weight: bold;
+  padding: 16px;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #0B75B7;
+  background-color: white;
+}
+
+.button:hover,
+.button:focus {
+  color: #0B75B7;
 }
 
 .sub-button {
-  background-color: white;
-  border-radius: 8px;
-  border: 1px solid grey;
+  display: none;
+  font-weight: normal;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-color: #0000000C;
+  margin-right: 16px;
 }
 
 .sub-button:hover,
 .sub-button:focus {
-  background-color: grey;
-  color: white;
+  outline: none;
+}
+
+.sub-button:hover {
+  box-shadow: 0 0 0 4px #B8C9D8;
+}
+
+.sub-button:focus {
+  box-shadow: 0 0 0 4px #FFC300;
 }
 
 
 .tab-list {
   display: flex;
   align-items: stretch;
-}
-
-.sub-button {
-  display: none;
-  font-weight: normal;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 [aria-selected="true"] + .sub-button {
   display: block;
+}
+
+.underline {
+  height: 4px;
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+.active .underline {
+  background-color: #0B75B7;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
 }

@@ -51,17 +51,20 @@
     tabs[index].addEventListener('keydown', keydownEventListener);
     tabs[index].addEventListener('keyup', keyupEventListener);
     tabs[index].addEventListener('focus', focusEventListener);
+    tabs[index].addEventListener('blur', blurEventListener);
 
     // Build an array with all tabs (<button>s) in it
     tabs[index].index = index;
   }
 
+  function blurEventListener(event) {
+    defocusTabs()
+  }
+
   function focusEventListener(event) {
+    defocusTabs()
     var tab = event.target;
-    for (var t = 0; t < tabs.length; t++) {
-      tabs[t].parentElement.classList.remove('focus');
-    }
-    tab.parentElement.classList.add('focus');
+    tab.closest('.tab-container').classList.add('focus');
   }
 
   // When a tab is clicked, activateTab is fired to activate it
@@ -168,7 +171,7 @@
 
     // Set the tab as selected
     tab.setAttribute('aria-selected', 'true');
-    tab.parentElement.classList.add('active');
+    tab.closest('.tab-container').classList.add('active');
 
     // Get the value of aria-controls (which is an ID)
     var controls = tab.getAttribute('aria-controls');
@@ -182,12 +185,18 @@
     }
   }
 
+  function defocusTabs() {
+    for (var t = 0; t < tabs.length; t++) {
+      tabs[t].closest('.tab-container').classList.remove('focus');
+    }
+  }
+
   // Deactivate all tabs and tab panels
   function deactivateTabs() {
     for (var t = 0; t < tabs.length; t++) {
       tabs[t].setAttribute('tabindex', '-1');
       tabs[t].setAttribute('aria-selected', 'false');
-      tabs[t].parentElement.classList.remove('active');
+      tabs[t].closest('.tab-container').classList.remove('active');
     }
 
     for (var p = 0; p < panels.length; p++) {
