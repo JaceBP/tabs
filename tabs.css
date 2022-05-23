@@ -38,7 +38,7 @@ button {
   overflow: visible;
 }
 
-.tab-container:hover {
+.tab-container:not(.active):hover {
   box-shadow: 0 0 0 4px #B8C9D8;
 }
 
@@ -54,7 +54,7 @@ button {
 .button {
   border: none;
   padding: 16px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 900;
   color: #0B75B7;
   background-color: white;
@@ -65,31 +65,6 @@ button {
   color: #0B75B7;
 }
 
-.sub-button {
-  display: none;
-  font-weight: normal;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: none;
-  background-color: #0000000C;
-  margin-right: 16px;
-}
-
-.sub-button:hover,
-.sub-button:focus {
-  outline: none;
-}
-
-.sub-button:hover {
-  box-shadow: 0 0 0 4px #B8C9D8;
-}
-
-.sub-button:focus {
-  box-shadow: 0 0 0 4px #FFC300;
-}
-
-
 .tab-list {
   display: flex;
   align-items: stretch;
@@ -97,7 +72,11 @@ button {
   margin-bottom: 16px;
 }
 
-[aria-selected="true"] + .sub-button {
+[aria-selected="false"] + .menu-button-links .sub-button {
+  display: none;
+}
+
+[aria-selected="true"] + .menu-button-links .sub-button {
   display: block;
 }
 
@@ -111,10 +90,3 @@ button {
   background-color: #0B75B7;
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
-}

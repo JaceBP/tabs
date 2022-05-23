@@ -1,0 +1,71 @@
+.menu-button-links button {
+  display: inline-block;
+}
+
+.menu-button-links [role="menu"] {
+  list-style: none;
+  display: none;
+  position: absolute;
+}
+
+/* focus styling */
+
+
+
+.menu {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 4px 4px 8px #D4D4D4;
+  width: fit-content;
+  padding: 16px;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  display: inline-block;
+}
+
+.menu-button {
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0B75B7;
+    background-color: white;
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+
+.menu-button:hover {
+  box-shadow: 0 0 0 4px #B8C9D8;
+}
+
+.menu-button:focus {
+  box-shadow: 0 0 0 4px #FFC300;
+  outline: 0;
+}
+
+.sub-button {
+  display: none;
+  font-weight: normal;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-color: #0000000C;
+  margin-right: 16px;
+  color: #0B75B7;
+}
+
+.sub-button:hover,
+.sub-button:focus {
+  outline: none;
+}
+
+.sub-button:hover {
+  box-shadow: 0 0 0 4px #B8C9D8;
+}
+
+.sub-button:focus {
+  box-shadow: 0 0 0 4px #FFC300;
+}

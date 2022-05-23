@@ -19,6 +19,7 @@
     />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="tabs.css" />
+    <link rel="stylesheet" href="menu.css" />
   </head>
   <body>
     <div class="tabs">
@@ -35,13 +36,46 @@
             >
               First tab
             </button>
-            <button class="sub-button">
-              <span class="material-symbols-outlined"
-                ><span class="material-symbols-outlined">
-                  more_horiz
-                </span></span
+
+            <div class="menu-button-links">
+              <button
+                class="sub-button"
+                type="button"
+                id="menubutton"
+                aria-haspopup="true"
+                aria-controls="menu2"
               >
-            </button>
+                <span class="material-symbols-outlined">more_horiz</span>
+              </button>
+
+              <ul
+                id="menu2"
+                role="menu"
+                class="menu"
+                aria-labelledby="menubutton"
+              >
+                <li role="none">
+                  <button class="menu-button" role="menuitem">
+                    First option
+                  </button>
+                </li>
+                <li role="none">
+                  <button class="menu-button" role="menuitem">
+                    Second option
+                  </button>
+                </li>
+                <li role="none">
+                  <button class="menu-button" role="menuitem">
+                    Third option
+                  </button>
+                </li>
+                <li role="none">
+                  <button class="menu-button" role="menuitem">
+                    Fourth option
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="underline"></div>
         </div>
@@ -59,7 +93,46 @@
             >
               Second tab
             </button>
-            <button class="sub-button">Settings</button>
+
+            <div class="menu-button-links">
+              <button
+                class="sub-button"
+                type="button"
+                id="menubutton"
+                aria-haspopup="true"
+                aria-controls="menu3"
+              >
+                <span class="material-symbols-outlined">more_horiz</span>
+              </button>
+
+              <ul
+                id="menu3"
+                role="menu"
+                class="menu"
+                aria-labelledby="menubutton"
+              >
+                <li role="none">
+                  <button class="menu-button" role="menuitem">
+                    First option
+                  </button>
+                </li>
+                <li role="none">
+                  <button class="menu-button" role="menuitem">
+                    Second option
+                  </button>
+                </li>
+                <li role="none">
+                  <button class="menu-button" role="menuitem">
+                    Third option
+                  </button>
+                </li>
+                <li role="none">
+                  <button class="menu-button" role="menuitem">
+                    Fourth option
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="underline"></div>
         </div>
@@ -120,5 +193,6 @@
     </div>
 
     <script src="tabs.js"></script>
+    <script src="menu.js"></script>
   </body>
 </html>
