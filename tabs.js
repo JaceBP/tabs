@@ -5,8 +5,6 @@
 
 'use strict';
 
-
-
 (function () {
 
   var tablist = document.querySelectorAll('[role="tablist"]')[0];
