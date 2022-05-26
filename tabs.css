@@ -73,11 +73,11 @@ button {
 }
 
 [aria-selected="false"] + .menu-button-links .sub-button {
-  display: none;
+  visibility: hidden;
 }
 
 [aria-selected="true"] + .menu-button-links .sub-button {
-  display: block;
+  visibility: visible;
 }
 
 .underline {
@@ -90,3 +90,10 @@ button {
   background-color: #0B75B7;
 }
 
+/* .sub-button {
+  visibility: hidden;
+} */
+
+.tab-container:hover .sub-button {
+  visibility: visible;
+}
